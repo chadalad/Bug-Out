@@ -20,4 +20,4 @@ export {
   JoinGame,
   LoadingGame,
   WaitingRoom,
-}
+};

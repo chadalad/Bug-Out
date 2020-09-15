@@ -1,8 +1,8 @@
-import { types } from "../actions";
+import { types } from '../actions';
 
 const initialState = {
-  name: "",
-  email: "",
+  name: '',
+  email: '',
   loggedIn: false,
   initialLoadingComplete: false,
 };
@@ -21,8 +21,8 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         email: null,
         loggedIn: false,
-        name: "",
-        role: "guest",
+        name: '',
+        role: 'guest',
       };
     case types.INITIAL_LOADING_COMPLETE:
       return {

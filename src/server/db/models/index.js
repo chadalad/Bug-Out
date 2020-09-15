@@ -17,6 +17,6 @@ module.exports = {
     User,
     Session,
     GameSession,
-    Prompt
-  }
+    Prompt,
+  },
 };

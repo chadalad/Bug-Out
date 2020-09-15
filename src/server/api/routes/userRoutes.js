@@ -1,12 +1,12 @@
-const { Router } = require("express");
-const bcrypt = require("bcrypt");
+const { Router } = require('express');
+const bcrypt = require('bcrypt');
 const {
   models: { User, Session },
-} = require("../../db/index");
+} = require('../../db/index');
 
 const userRouter = Router();
 
-userRouter.post("/login", async (req, res) => {
+userRouter.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({
     where: {
@@ -27,7 +27,7 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
-userRouter.get("/whoami", (req, res) => {
+userRouter.get('/whoami', (req, res) => {
   if (req.user) {
     res.send({
       email: req.user.email,
@@ -37,14 +37,14 @@ userRouter.get("/whoami", (req, res) => {
   } else {
     res.send({
       email: null,
-      role: "guest",
+      role: 'guest',
       loggedIn: false,
     });
   }
 });
 
 // create a user
-userRouter.post("/create", async (req, res) => {
+userRouter.post('/create', async (req, res) => {
   try {
     const { email, name, password } = req.body;
     const createdUser = await User.create({ email, name, password });
@@ -56,7 +56,7 @@ userRouter.post("/create", async (req, res) => {
 });
 
 // add name to seesion for guest users
-userRouter.put("/guest-session", async (req, res) => {
+userRouter.put('/guest-session', async (req, res) => {
   try {
     const { name } = req.body;
     await Session.update({ name }, { where: { id: req.session_id } });
@@ -68,7 +68,7 @@ userRouter.put("/guest-session", async (req, res) => {
 });
 
 // adds users to a game session
-userRouter.put("/session", async (req, res) => {
+userRouter.put('/session', async (req, res) => {
   try {
     const sessionId = req.session_id;
     const gameSessionId = req.body.id;
@@ -81,7 +81,7 @@ userRouter.put("/session", async (req, res) => {
 });
 
 // add stats to the user's profile after the game
-userRouter.put("/user/:id", async (req, res) => {
+userRouter.put('/user/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { score, winner } = req.body;
@@ -92,17 +92,17 @@ userRouter.put("/user/:id", async (req, res) => {
           gamesPlayed: (req.user.gamesPlayed += 1),
           gamesWon: (req.user.gamesWon += 1),
         },
-        { where: { id } }
+        { where: { id } },
       );
     } else if (req.user.highScore < score) {
       await User.update(
         { highScore: score, gamesPlayed: (req.user.gamesPlayed += 1) },
-        { where: { id } }
+        { where: { id } },
       );
     } else {
       await User.update(
         { gamesPlayed: (req.user.gamesPlayed += 1) },
-        { where: { id } }
+        { where: { id } },
       );
     }
     res.status(200).send('found');
@@ -113,6 +113,6 @@ userRouter.put("/user/:id", async (req, res) => {
 });
 
 module.exports = {
-  path: "/user",
+  path: '/user',
   router: userRouter,
 };

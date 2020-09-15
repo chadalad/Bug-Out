@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { whoami } from "../store/thunks/loginThunks";
-import Login from "./login/login";
-import Logout from "./login/logout";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { whoami } from '../store/thunks/loginThunks';
+import Login from './login/login';
+import Logout from './login/logout';
 
 const LoginForm = ({ user, whoAmI }) => {
   useEffect(() => {
@@ -12,9 +12,7 @@ const LoginForm = ({ user, whoAmI }) => {
     getData();
   }, []);
 
-  const showLoginOrLogout = () => {
-    return user.loggedIn ? <Logout /> : <Login />;
-  };
+  const showLoginOrLogout = () => (user.loggedIn ? <Logout /> : <Login />);
 
   return <div>{showLoginOrLogout()}</div>;
 };

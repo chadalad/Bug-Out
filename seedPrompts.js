@@ -1,154 +1,153 @@
 const axios = require('axios');
 const { models } = require('./src/server/db/models/index');
 
-
 const data = [
   {
     id: '59cfc000aeb2844d16000075',
     name: 'Alternate capitalization',
     slug: 'alternate-capitalization',
     completedLanguages: [Array],
-    completedAt: '2020-03-11T16:54:52.076Z'
+    completedAt: '2020-03-11T16:54:52.076Z',
   },
   {
     id: '515de9ae9dcfc28eb6000001',
     name: 'Split Strings',
     slug: 'split-strings',
     completedLanguages: [Array],
-    completedAt: '2020-02-29T15:24:10.101Z'
+    completedAt: '2020-02-29T15:24:10.101Z',
   },
   {
     id: '55cbd4ba903825f7970000f5',
     name: 'Grasshopper - Grade book',
     slug: 'grasshopper-grade-book',
     completedLanguages: [Array],
-    completedAt: '2020-02-28T20:28:42.044Z'
+    completedAt: '2020-02-28T20:28:42.044Z',
   },
   {
     id: '511f11d355fe575d2c000001',
     name: 'Two Oldest Ages',
     slug: 'two-oldest-ages-1',
     completedLanguages: [Array],
-    completedAt: '2020-02-28T16:32:35.794Z'
+    completedAt: '2020-02-28T16:32:35.794Z',
   },
   {
     id: '530e15517bc88ac656000716',
     name: 'Rot13',
     slug: 'rot13-1',
     completedLanguages: [Array],
-    completedAt: '2020-02-17T20:30:23.694Z'
+    completedAt: '2020-02-17T20:30:23.694Z',
   },
   {
     id: '5208f99aee097e6552000148',
     name: 'Break camelCase',
     slug: 'break-camelcase',
     completedLanguages: [Array],
-    completedAt: '2020-02-17T17:50:18.804Z'
+    completedAt: '2020-02-17T17:50:18.804Z',
   },
   {
     id: '5264d2b162488dc400000001',
     name: 'Stop gninnipS My sdroW!',
     slug: 'stop-gninnips-my-sdrow',
     completedLanguages: [Array],
-    completedAt: '2020-02-17T17:38:49.532Z'
+    completedAt: '2020-02-17T17:38:49.532Z',
   },
   {
     id: '5b39e3772ae7545f650000fc',
     name: 'Remove duplicate words',
     slug: 'remove-duplicate-words',
     completedLanguages: [Array],
-    completedAt: '2020-02-17T17:23:47.114Z'
+    completedAt: '2020-02-17T17:23:47.114Z',
   },
   {
     id: '585d7d5adb20cf33cb000235',
     name: 'Find the unique number',
     slug: 'find-the-unique-number-1',
     completedLanguages: [Array],
-    completedAt: '2020-02-10T02:41:29.482Z'
+    completedAt: '2020-02-10T02:41:29.482Z',
   },
   {
     id: '57eb8fcdf670e99d9b000272',
     name: 'Highest Scoring Word',
     slug: 'highest-scoring-word',
     completedLanguages: [Array],
-    completedAt: '2020-02-09T16:22:18.846Z'
+    completedAt: '2020-02-09T16:22:18.846Z',
   },
   {
     id: '5949481f86420f59480000e7',
     name: 'Odd or Even?',
     slug: 'odd-or-even',
     completedLanguages: [Array],
-    completedAt: '2020-02-08T16:33:07.876Z'
+    completedAt: '2020-02-08T16:33:07.876Z',
   },
   {
     id: '582cb0224e56e068d800003c',
     name: 'Keep Hydrated!',
     slug: 'keep-hydrated-1',
     completedLanguages: [Array],
-    completedAt: '2020-02-08T16:28:54.724Z'
+    completedAt: '2020-02-08T16:28:54.724Z',
   },
   {
     id: '58aed2cafab8faca1d000e20',
     name: 'Nth power rules them all!',
     slug: 'nth-power-rules-them-all',
     completedLanguages: [Array],
-    completedAt: '2020-07-20T14:27:09.844Z'
+    completedAt: '2020-07-20T14:27:09.844Z',
   },
   {
     id: '5a092d9e46d843b9db000064',
     name: 'Array element parity',
     slug: 'array-element-parity',
     completedLanguages: [Array],
-    completedAt: '2020-07-20T14:20:54.026Z'
+    completedAt: '2020-07-20T14:20:54.026Z',
   },
   {
     id: '535474308bb336c9980006f2',
     name: 'Greet Me',
     slug: 'greet-me',
     completedLanguages: [Array],
-    completedAt: '2020-05-27T19:29:33.561Z'
+    completedAt: '2020-05-27T19:29:33.561Z',
   },
   {
     id: '5a262cfb8f27f217f700000b',
     name: 'Unique string characters',
     slug: 'unique-string-characters',
     completedLanguages: [Array],
-    completedAt: '2020-05-18T20:37:50.200Z'
+    completedAt: '2020-05-18T20:37:50.200Z',
   },
   {
     id: '5259b20d6021e9e14c0010d4',
     name: 'Reverse words',
     slug: 'reverse-words',
     completedLanguages: [Array],
-    completedAt: '2020-05-04T20:42:12.236Z'
+    completedAt: '2020-05-04T20:42:12.236Z',
   },
   {
     id: '57a1ae8c7cb1f31e4e000130',
     name: 'Find min and max',
     slug: 'find-min-and-max',
     completedLanguages: [Array],
-    completedAt: '2020-04-21T21:18:22.309Z'
+    completedAt: '2020-04-21T21:18:22.309Z',
   },
   {
     id: '57547f9182655569ab0008c4',
     name: 'Recursive Replication',
     slug: 'recursive-replication',
     completedLanguages: [Array],
-    completedAt: '2020-04-08T18:19:20.500Z'
+    completedAt: '2020-04-08T18:19:20.500Z',
   },
   {
     id: '5727bb0fe81185ae62000ae3',
     name: 'Backspaces in string',
     slug: 'backspaces-in-string',
     completedLanguages: [Array],
-    completedAt: '2020-03-11T14:32:21.067Z'
+    completedAt: '2020-03-11T14:32:21.067Z',
   },
   {
     id: '5287e858c6b5a9678200083c',
     name: 'Does my number look big in this?',
     slug: 'does-my-number-look-big-in-this',
     completedLanguages: [Array],
-    completedAt: '2020-03-10T14:32:21.961Z'
+    completedAt: '2020-03-10T14:32:21.961Z',
   },
   // {
   //   id: '5648b12ce68d9daa6b000099',
@@ -689,7 +688,7 @@ const data = [
   //   completedLanguages: [Array],
   //   completedAt: '2020-01-21T01:32:54.232Z'
   // }
-]
+];
 
 // axios.get('https://www.codewars.com/api/v1/users/nickcarr51/code-challenges/completed?page=0/?access_key=QsVQKDG8_jqTJVwrWFWo')
 // .then(({data})=> console.log(data))
@@ -698,32 +697,31 @@ const data = [
 data.map((prompt) => {
   axios.get(`https://www.codewars.com/api/v1/code-challenges/${prompt.slug}/?access_key=QsVQKDG8_jqTJVwrWFWo`)
   // eslint-disable-next-line no-shadow
-  .then(({data})=> {
-    let difficulty=null;
-    data.rank.id=Math.abs(data.rank.id);
+    .then(({ data }) => {
+      let difficulty = null;
+      data.rank.id = Math.abs(data.rank.id);
 
-    if(data.rank.id>6){
-      difficulty='easy'
-    } else if(data.rank.id >5 && data.rank.id<7){
-      difficulty='medium'
-    } else {
-      difficulty='hard'
-    }
-
-    try{
-      const newPropmt= {
-        id: data.id,
-        name: data.name, 
-        prompt: data.description, 
-        difficulty,
-        slug: data.slug
+      if (data.rank.id > 6) {
+        difficulty = 'easy';
+      } else if (data.rank.id > 5 && data.rank.id < 7) {
+        difficulty = 'medium';
+      } else {
+        difficulty = 'hard';
       }
-      return models.Prompt.create(newPropmt)
-    }
-    catch(e){
-      console.log(e);
-    }
-    return null
-  })
-  console.log('Prompts Seeded')
-})
+
+      try {
+        const newPropmt = {
+          id: data.id,
+          name: data.name,
+          prompt: data.description,
+          difficulty,
+          slug: data.slug,
+        };
+        return models.Prompt.create(newPropmt);
+      } catch (e) {
+        console.log(e);
+      }
+      return null;
+    });
+  console.log('Prompts Seeded');
+});

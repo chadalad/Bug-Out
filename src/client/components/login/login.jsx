@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { loginThunk, whoami } from "../../store/thunks/loginThunks";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { loginThunk, whoami } from '../../store/thunks/loginThunks';
 
 const Login = ({ login, history }) => {
-  const [email, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,16 +31,15 @@ const Login = ({ login, history }) => {
         />
       </label>
       <button onClick={handleSubmit} type="submit">
-        {" "}
-        Login{" "}
+        {' '}
+        Login{' '}
       </button>
     </form>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  login: (username, password, history) =>
-    dispatch(loginThunk(username, password, history)),
+  login: (username, password, history) => dispatch(loginThunk(username, password, history)),
   whoami: () => dispatch(whoami()),
 });
 

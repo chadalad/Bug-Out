@@ -4,15 +4,13 @@ const parseCookie = (cookieStr) => {
   }
 
   return cookieStr
-    .split(";")
+    .split(';')
     .map((s) => s.trim())
-    .map((s) => s.split("="))
-    .reduce((cookieObj, [key, val]) => {
-      return {
-        ...cookieObj,
-        [key]: val,
-      };
-    }, {});
+    .map((s) => s.split('='))
+    .reduce((cookieObj, [key, val]) => ({
+      ...cookieObj,
+      [key]: val,
+    }), {});
 };
 
 module.exports = {

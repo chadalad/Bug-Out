@@ -1,8 +1,10 @@
-const { STRING, UUID, UUIDV4, ENUM, INTEGER } = require("sequelize");
-const bcrypt = require("bcrypt");
-const db = require("../db");
+const {
+  STRING, UUID, UUIDV4, ENUM, INTEGER,
+} = require('sequelize');
+const bcrypt = require('bcrypt');
+const db = require('../db');
 
-const User = db.define("user", {
+const User = db.define('user', {
   id: {
     type: UUID,
     defaultValue: UUIDV4,
@@ -32,7 +34,7 @@ const User = db.define("user", {
   },
   role: {
     type: ENUM,
-    values: ["admin", "guest", "member"],
+    values: ['admin', 'guest', 'member'],
     allowNull: true,
   },
   highScore: {

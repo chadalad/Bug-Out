@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { logoutThunk } from "../../store/thunks/loginThunks";
+import React from 'react';
+import { connect } from 'react-redux';
+import { logoutThunk } from '../../store/thunks/loginThunks';
 
 const Logout = ({ user, logout }) => (
   <div>
